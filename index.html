@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForYouTips</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #030911;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .gallery-container {
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 20px;
+            background: #080924;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            text-align: center;
+            margin-bottom: 80px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            cursor: pointer;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-text {
+            font-size: 1em;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 10px 0;
+            text-transform: capitalize;
+        }
+
+        /* Popup styling */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .popup-content h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease;
+        }
+
+        .popup-content button:hover {
+            background: #0056b3;
+        }
+        .closePopup{
+            background-color: rgb(255, 79, 79) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>For You Tips</h1>
+
+    <div class="gallery-container">
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Pair Lockscreen Wallpaper</div>
+            <img src="Bilder/Connect phones.png" alt="Pair Lockscreen Wallpaper">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Draw on the Lock Screen</div>
+            <img src="Bilder/Draw on wallpaper.png" alt="Draw on the Lock Screen">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Custom Homebar</div>
+            <img src="Bilder/Custom home bar.png" alt="Custom Homebar">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Make the iPhone Battery Colorful</div>
+            <img src="Bilder/Color Battery.png" alt="Make the iPhone Battery Colorful">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Set a Password on Apps</div>
+            <img src="Bilder/Lock Apps.png" alt="Set a Password on Apps">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Add Emoji to iPhone Time</div>
+            <img src="Bilder/Emoji on clock.png" alt="Add Emoji to iPhone Time">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Add A Smile to the Battery</div>
+            <img src="Bilder/Smiley Battery.png" alt="Add A Smile to the Battery">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Make Infinite Battery on iPhone</div>
+            <img src="Bilder/Infinite battery.png" alt="Make Infinite Battery on iPhone">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Get New Emoji on iPhone</div>
+            <img src="Bilder/New Emojis.png" alt="Get New Emoji on iPhone">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">See Who Viewed Your Instagram Profile</div>
+            <img src="Bilder/Profile View Instagr.png" alt="See Who Viewed Your Instagram Profile">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Make a Rainbow Dock on iPhone</div>
+            <img src="Bilder/Rainbow dock.png" alt="Make a Rainbow Dock on iPhone">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Get a custom swipe effect on Iphone</div>
+            <img src="Bilder/Custom Swipe Effect.jpg" alt="Get a custom swipe effect on Iphone">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Custom Menu Colors</div>
+            <img src="Bilder/Menu Colors.jpg" alt="Custom Menu Colors">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Make a Rainbow Battery on iPhone</div>
+            <img src="Bilder/Rainbow battery.png" alt="Make a Rainbow Battery on iPhone">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Custom Iphone Theme</div>
+            <img src="Bilder/CustomIphoneTheme.jpg" alt="Custom Iphone Theme">
+        </div>
+
+        <div class="gallery-item" onclick="showPopup()">
+            <div class="image-text">Add Icon to Battery</div>
+            <img src="Bilder/Icon Battery.png" alt="Add Icon to Battery">
+        </div>
+    </div>
+
+    <!-- Popup overlay for verification -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <h2>Verify to unlock the app</h2>
+            <p>Apps are locked for security reasons, please verify.</p>
+            <button class="verificationRedirect" onclick="redirectToVerification()">Verify</button>
+            <button class="closePopup" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function redirectToVerification() {
+            window.location.href = "https://unlockcontent.net/cl/i/x64poj";
+        }
+    </script>
+
+</body>
+</html>
